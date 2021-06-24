@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sticky {
+    @apply bg-gray-300
+  }
+
+  .sticky h1{
+    @apply text-gray-800
+  }

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs Posts | Berack Kaunda's Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
+    <link rel="icon" href="./images/favicon.jpg">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class=" m-0 p-0 allPostWrapper bg-gray-900 ">
+    <!-- blog header section starts -->
+
+    <section class=" navbar sticky w-full bg-gray-200 top-0 right-0 left-0">
+
+    </section>
+
+
+    <!-- toggle menu -->
+    <section class=" md:hidden transition duration-3000 toggleMenu rounded-md h-auto w-0 left-0 z-10 fixed bg-gray-300 overflow-hidden opacity-95">
+        <div class="relative">
+            <ul class="float-left text-gray-900 p-12 cursor-pointer uppercase text-sm ">
+                <li class="openLoginModal hover:underline m-3">Login</li>
+                <li class="openSignUpModal hover:underline m-3">Sign Up</li>
+                <li  class="logout hover:underline m-3">Log Out</li>
+                <a href="./create.html"><li class="hover:underline m-3">create Post</li></a>
+            </ul>
+        </div>
+    </section>
+    <!-- toggle menu -->
+
+    <!-- user info pop up -->
+    <section class="hidden transition duration-3000 userInfo h-32 w-auto m-8 right-0 z-10 fixed bg-gray-300 overflow-hidden opacity-95">
+        <div class="relative text-center m-8 text-xl">
+            <h1>
+                Logged In Us <br> my@accountdetails
+            </h1>
+        </div>
+    </section>
+
+       <!-- user info pop up -->
+  <!--Sign up modal -->
+  <section class="signUpModal hidden md:h-full md:top-24 md:left-0 top-1/2 left-1/2 -mt-40 -ml-36 z-10 fixed md:m-0  md:w-full opacity-95 md:bg-gray-200 ">
+  <div class="p-4 md:mr-28 md:ml-28 rounded md:rounded-lg bg-gray-700 md:bg-gray-900  ">
+        <div class="md:p-4">
+            <h1 class="float-left text-md md:text-center text-white md:font-bold md:text-4xl">
+                Create a New Account
+            </h1>
+            <span class="closeModal float-right text-xl text-white font-bold md:text-4xl cursor-pointer hover:text-red-700">&times;</span>
+         </div>
+        <div class="md:border-4 border-white md:m-10  md:text-2xl text-center">
+            <form id="signUpForm" class="inline">    
+                <div class="">
+                    <input id="signUpUsername " class="text-gray-900 m-4 md:m-6 p-3 md:w-96 border-none rounded focus:outline-none" type="text" placeholder="Username" required> 
+                </div>
+                <div class="">
+                    <input id="signUpEmail" class=" text-gray-900 m-4 md:m-6 p-3 md:w-96 border-none rounded focus:outline-none" type="email" placeholder="email" required> 
+                </div>
+                <div class="">
+                    <input id="signUpPassword" class=" text-gray-900 m-4 md:m-6 p-3 md:w-96 border-none rounded focus:outline-none" type="password" placeholder="password"> 
+                </div>
+                <div class="md:m-4">
+                    <button class="text-white border border-white p-2  pr-7 pl-7 rounded hover:text-gray-900 hover:bg-white hover:border-none">
+                        Sign Up
+                    </button>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</section>
+  <!--Sign up modal -->  
+  <!--Login modal -->
+  <section class="loginModal hidden md:h-full md:top-24 md:left-0 top-1/2 left-1/2 -mt-40 -ml-36 z-10 fixed m-2 md:m-0 w-auto md:w-full  opacity-95 md:bg-gray-200">
+    <div class="p-4 md:mr-28 md:ml-28 rounded md:rounded-lg bg-gray-700 md:bg-gray-900">
+        <div class="md:p-4">
+            <h1 class="float-left text-md md:text-center text-white md:font-bold md:text-4xl">
+                Login In To Your Account
+            </h1>
+            <span class="closeModal float-right text-xl text-white font-bold md:text-4xl cursor-pointer hover:text-red-700">&times;</span>
+         </div>
+        <div class="md:border-4 border-white md:m-10  md:text-2xl text-center">
+            <form id="loginForm" class=" inline " action="submit">
+                <div class="">
+                    <input id="loginEmail" class="text-gray-900 m-4 md:m-6 p-3 md:w-96 border-none rounded focus:outline-none" type="email" placeholder="email" required> 
+                </div>
+                <div class="">
+                    <input id="loginPassword" class="text-gray-900 m-4 md:m-6 p-3 md:w-96 border-none rounded focus:outline-none" type="password" placeholder="password"> 
+                </div>
+                <div>
+                    <h1 class=" text-white ">
+                        Don't have an account <a id="openSignUpModal" class=" text-blue-800 " href="">Sign Up</a>
+                    </h1>
+                </div>
+                <div class="m-4">
+                    <button id="closeLoginModal" class="text-white border border-white p-2  pr-7 pl-7 rounded hover:text-gray-900 hover:bg-white hover:border-none">
+                        Log In
+                    </button>
+                </div>
+          </form>
+      </div>
+    </div>
+  </section>  
+    <!--Login modal -->
+
+    <section>
+        <div class=" header h-64 p-4 lg:h-96 :w-full bg-gray-200 md:bg-black text-black-700 md:text-gray-200 text-center ">
+            <div class="lg:pt-24">
+                <h1 class=" text-3xl  font-medium ">
+                    Blog
+                </h1>
+                <p class=" pt-4 text-xl ">
+                    Featured articles about making products as a developer
+                </p>
+                <div>
+                    <ul class=" flex text-sm justify-center text-blue-500 pt-12 md:text-lg ">
+                        <li class=" catDev mr-4 hover:underline" >
+                            <a href="details.html">Development</a>  
+                          </li>
+                        <li class=" catCareer mr-4 hover:underline" >
+                            <a href="details.html">Career</a>  
+                          </li>
+                        <li class=" catMarketing mr-4 hover:underline" >
+                          <a href="details.html">Marketing</a>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- header section ends -->
+            <!-- all posts container -->
+                <section class=" postsContainer border-0  md:mr-24 md:ml-24"> 
+                    <!-- category development posts -->
+                    <div class="">
+                        <!-- first row -->
+                        <div class="recentPost">
+
+                        </div>
+                        <hr class="border-top border-gray-500">
+
+                        <!-- second row -->
+                        <div class="grid3Container grid grid-cols-1  md:grid-cols-3 md:gap-4 mt-10 mb-10 m-3">
+                        </div>                 
+                    </div>
+                    <!-- category development posts ends -->
+
+                    <hr class="border-top border-gray-500">
+
+                    <!-- category marketing starts -->
+                    <div class="allDevelopmentPosts">                       
+                        <!-- first row -->
+                        <div class="developmentPosts grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 mb-10 m-3">
+
+                        </div>
+
+                        <hr class="border-top border-gray-500">
+
+                            <!-- second row -->
+                        <div class="recentDevPost">
+
+                        </div>
+                        </div>
+                        <!-- all marketing posts end -->
+                        <hr class="border-top border-gray-500">
+                        <!-- all career posts starts -->
+                            <div class=" allMarketingPosts grid md:grid-cols-2  grid-cols-1   md:gap-4 mt-10 mb-10 m-3">
+                            </div>
+                </section>
+                <!-- all posts container -->
+        </section>
+<!-- all posts wrapper ends -->
+
+<section class="footer bg-gray-600 h-auto  w-full pb-10">
+    <div class=" text-white text-center pt-5 pb-10 md:pt-10 ">
+        <h1 class="text-3xl m-2" >Learn about building products as a developer</h1>
+        <p class="text-sm m-4">
+            Get a once-per-month email with my latest article and additional details about my launches, products, and experiments ✨
+        </p>
+    </div>
+    <div class="text-center md:flex md:justify-center m-2 ">
+        <form action="">
+            <input class=" border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent rounded pl-4 md:pr-64 md:pl-4 pt-2 pb-2" type="text" placeholder="Your email adrress">
+            <button class="border-0 rounded m-2 md:m-0 md:p-2 p-2 pl-14 pr-14 bg-blue-600 text-white font-bold focus:outline-none cursor-pointer">
+            Get Updates
+            </button>
+        </form>      
+ 
+    </div>
+</section>
+
+<section>
+    <div class="m-4 text-md text-center font-bold text-white">
+        <p>
+            © Berack Kaunda | Website <span class="getYear">2020</span>
+        </p>
+    </div>
+</section>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCcQ_HgAr7Q6osezVtjt9uAWFoCPB0jXdQ",
+            authDomain: "berack-kaunda.firebaseapp.com",
+            projectId: "berack-kaunda",
+            storageBucket: "berack-kaunda.appspot.com",
+            messagingSenderId: "544313171016",
+            appId: "1:544313171016:web:1d68b36a2a93143aba8c7d",
+            measurementId: "G-CRWKX5K7ZJ"
+        };
+        // Initialize Firebase;
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const auth = firebase.auth();
+        const db = firebase.firestore()
+</script>
+<script src="./js/index.js"></script>
+<script src="./js/details.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/create.js"></script>
+<script src="./js/category.js"></script>
+</body>
+
+
+</html>

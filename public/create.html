@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post | Berack Kaunda's Website</title>
+    
+    <link rel="icon" href="./images/favicon.jpg">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class=" m-0 p-0 singlePostWrapper bg-gray-200">
+    <section class="md:mr-28 md:ml-28 m-2 rounded md:mt-20 border bg-gray-900 border-white">
+        <div class="m-4">
+            <h1 class="float-left text-center text-white font-bold md:text-2xl ">
+                Feeling Great 🙃.Create A Post and Share it with the  world!!! 
+            </h1>
+        </div>
+
+        
+        <div class=" md:p-8 md:text-2xl">
+            <form class=" inline " action="" >
+                <div class="m-4  text-white">
+                    <h1 class="text-white m-3">Select Category</h1>
+                    <select class=" border border-white bg-transparent rounded p-2 "  name="category">
+                        <option class="text-gray-600" value="development">Development</option>
+                        <option class="text-gray-600" value="career">Career</option>
+                        <option class="text-gray-600" value="marketing">Marketing</option>
+                    </select>
+                </div>
+
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Blog title</h1>
+                    <textarea class="p-4 w-full resize text-gray-600 bg-transparent border border-white focus:outline-none rounded"  type="text" required name="title" rows="3"></textarea>
+                </div>
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Blog body</h1>
+                    <textarea class=" w-full p-4 resize text-gray-600 bg-transparent border border-white focus:outline-none rounded" rows="7" required name="body" onkeyup="calcRT(this)"  type="text"></textarea>
+                </div>
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Input an Image Link</h1>
+                    <input class="p-4 text-gray-600 bg-transparent border border-white focus:outline-none rounded" required name="imageLink" placeholder="please enter a url"  type="url">
+                </div>
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Author name</h1>
+                    <input class="p-4 text-gray-600 bg-transparent border border-white focus:outline-none rounded-md" required name="author" type="text">
+                </div>
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Read Time</h1>
+                    <input class="p-4 text-gray-600 bg-transparent border border-white focus:outline-none rounded-md" readonly name="readTime" id="readTime" type="text">
+                </div>
+                <div class="m-4 text-white">
+                    <h1 class="text-white m-3">Current Time</h1>
+                    <input class="p-4 text-gray-600 bg-transparent border border-white focus:outline-none rounded-md" required name="currentTime" readonly id="currentTime" type="text">
+                </div>
+                <div class=" text-white">
+                    <button class="border border-white rounded-md p-2 text-white m-3 hover:bg-blue-600 focus:outline-none">Share Post 🚀</button>
+
+                </div>
+            </form>
+            <a href="./index.html"><button class="border border-white rounded-md p-2 text-white m-3 hover:bg-blue-600 focus:outline-none">
+                Home
+            </button></a>
+        </div>
+    </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCcQ_HgAr7Q6osezVtjt9uAWFoCPB0jXdQ",
+        authDomain: "berack-kaunda.firebaseapp.com",
+        projectId: "berack-kaunda",
+        storageBucket: "berack-kaunda.appspot.com",
+        messagingSenderId: "544313171016",
+        appId: "1:544313171016:web:1d68b36a2a93143aba8c7d",
+        measurementId: "G-CRWKX5K7ZJ"
+    };
+    // Initialize Firebase;
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const auth = firebase.auth();
+    const db = firebase.firestore()
+</script>
+<script src="./js/create.js"></script>
+</body>
+
+
+
+</html>
